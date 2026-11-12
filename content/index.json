@@ -1,0 +1,43 @@
+{
+  "title": "工作專業知識庫",
+  "subtitle": "Server BMC・IPMI・Redfish・網路協定・PMBus 複習筆記",
+  "categories": [
+    { "id": "server",   "icon": "🖥️", "title": "伺服器管理",           "desc": "BMC／SMM、IPMI、Redfish：遠端管理一台伺服器的角色與介面" },
+    { "id": "network",  "icon": "🌐", "title": "電腦網路與 Web API",   "desc": "IP、Port、TCP／UDP、HTTP／TLS、REST API、JSON" },
+    { "id": "bus",      "icon": "🔌", "title": "硬體匯流排與 PMBus",   "desc": "I²C、SMBus、PMBus 位址、交易格式與資料解碼" },
+    { "id": "debug",    "icon": "🛠️", "title": "Linux 診斷與 Debug",   "desc": "端到端資料流、網路診斷指令、逐層故障定位" },
+    { "id": "firmware", "icon": "📦", "title": "韌體更新",             "desc": "TFTP、OneCLI、Redfish UpdateService 與更新安全檢查" },
+    { "id": "project",  "icon": "🚀", "title": "實作專題與 Lab",       "desc": "模擬 Redfish 伺服器、PMBus 解碼、Debug Checklist" },
+    { "id": "review",   "icon": "📚", "title": "複習工具",             "desc": "25 個核心問答、40 題測驗、速查表、名詞表、參考資料" }
+  ],
+  "stages": [
+    { "title": "第 1 階段｜基礎",  "desc": "BMC／PSU 架構、IP／Port、TCP／UDP、HTTP／HTTPS、API、JSON", "docs": ["ch01", "ch02", "ch03", "ch04", "ch05", "ch06", "ch07"] },
+    { "title": "第 2 階段｜應用",  "desc": "Redfish API、curl、Python requests、IPMI 指令、Firmware Inventory", "docs": ["ch08", "ch09"] },
+    { "title": "第 3 階段｜底層",  "desc": "I²C、SMBus、PMBus、Address、Transaction、資料格式解碼", "docs": ["ch10", "ch11", "ch12"] },
+    { "title": "第 4 階段｜整合",  "desc": "PSU Telemetry 全鏈路、Linux Debug、TFTP／韌體更新、專題", "docs": ["ch13", "ch14", "ch15", "ch16"] },
+    { "title": "總複習",           "desc": "讀完後用這些工具快速回顧與自我檢驗", "docs": ["faq", "quiz", "cheatsheet", "glossary", "references"] }
+  ],
+  "docs": [
+    { "id": "ch01", "cat": "server",   "no": "01", "level": "基礎", "added": "2026-11-12", "title": "Server、BMC、SMM、PSU 的角色", "summary": "主機架構、帶外／帶內管理、待機供電、SMM 與 BMC 的差異、PSU Telemetry", "file": "content/server/ch01-roles.md" },
+    { "id": "ch02", "cat": "server",   "no": "02", "level": "基礎", "added": "2026-11-12", "title": "IPMI 與 Redfish 的異同", "summary": "NetFn／Cmd、SDR／SEL／FRU、RMCP+ 對比 HTTPS＋JSON 資源模型", "file": "content/server/ch02-ipmi-vs-redfish.md" },
+    { "id": "ch03", "cat": "network",  "no": "03", "level": "基礎", "added": "2026-11-12", "title": "網路基本名詞與分層", "summary": "IP、子網路、Gateway、MAC、Port、OSI 七層與 TCP/IP 模型對照", "file": "content/network/ch03-basics-layers.md" },
+    { "id": "ch04", "cat": "network",  "no": "04", "level": "基礎", "added": "2026-11-12", "title": "TCP、UDP 與 Port", "summary": "三向交握、可靠傳輸、UDP 資料報、常見 Port、TFTP 的 TID", "file": "content/network/ch04-tcp-udp-port.md" },
+    { "id": "ch05", "cat": "network",  "no": "05", "level": "基礎", "added": "2026-11-12", "title": "HTTP、HTTPS 與 TLS", "summary": "Request／Response 結構、Method、Status Code、憑證與 curl 選項", "file": "content/network/ch05-http-tls.md" },
+    { "id": "ch06", "cat": "network",  "no": "06", "level": "基礎", "added": "2026-11-12", "title": "API、REST API 與 URI", "summary": "API 的範圍、REST 資源概念、URL 逐段拆解、Actions", "file": "content/network/ch06-api-rest-uri.md" },
+    { "id": "ch07", "cat": "network",  "no": "07", "level": "基礎", "added": "2026-11-12", "title": "JSON 全面理解", "summary": "六種型別、與 Python dict／list 對應、解析失敗與缺欄位處理", "file": "content/network/ch07-json.md" },
+    { "id": "ch08", "cat": "server",   "no": "08", "level": "應用", "added": "2026-11-12", "title": "Redfish 從 curl 到 Python", "summary": "Service Root、@odata.id、Session Token、requests、匯出 CSV", "file": "content/server/ch08-redfish-practice.md" },
+    { "id": "ch09", "cat": "server",   "no": "09", "level": "應用", "added": "2026-11-12", "title": "IPMI 實作與限制", "summary": "ipmitool 選項拆解、sensor／SDR／SEL／FRU、RAW 命令風險、交叉核對", "file": "content/server/ch09-ipmi-practice.md" },
+    { "id": "ch10", "cat": "bus",      "no": "10", "level": "底層", "added": "2026-11-12", "title": "I²C、SMBus、PMBus 的關係", "summary": "SDA／SCL、START／STOP、ACK／NACK，三者的分工與層級", "file": "content/bus/ch10-i2c-smbus-pmbus.md" },
+    { "id": "ch11", "cat": "bus",      "no": "11", "level": "底層", "added": "2026-11-12", "title": "I²C Address 與 Linux 指令", "summary": "7-bit 0x68 與 0xD0／0xD1、i2c-tools、Byte／Word／Block、PEC", "file": "content/bus/ch11-i2c-address-linux.md" },
+    { "id": "ch12", "cat": "bus",      "no": "12", "level": "底層", "added": "2026-11-12", "title": "PMBus Command 與資料解碼", "summary": "常用命令碼、Linear11／Linear16／DIRECT 手算與 Python、STATUS_WORD", "file": "content/bus/ch12-pmbus-decode.md" },
+    { "id": "ch13", "cat": "debug",    "no": "13", "level": "整合", "added": "2026-11-12", "title": "從 PSU 到 Python 的端到端資料流", "summary": "READ_POUT 一路走到 CSV：每一層做什麼、可能壞在哪", "file": "content/debug/ch13-end-to-end.md" },
+    { "id": "ch14", "cat": "debug",    "no": "14", "level": "整合", "added": "2026-11-12", "title": "Linux 網路診斷與常用指令", "summary": "ip、ping、nc、ss、curl -v、tcpdump 與症狀排查矩陣", "file": "content/debug/ch14-linux-debug.md" },
+    { "id": "ch15", "cat": "firmware", "no": "15", "level": "進階", "added": "2026-11-12", "title": "TFTP、OneCLI 與 Firmware Update", "summary": "TFTP 運作、伺服器架設、WSL 網路、UpdateService、更新前安全檢查", "file": "content/firmware/ch15-tftp-firmware.md" },
+    { "id": "ch16", "cat": "project",  "no": "16", "level": "整合", "added": "2026-11-12", "title": "整合實作專題與 Lab", "summary": "模擬 Redfish 伺服器、PMBus 解碼、交叉比對、Debug Checklist", "file": "content/project/ch16-projects.md" },
+    { "id": "faq",        "cat": "review", "title": "25 個核心問題速答", "summary": "每題 30 秒講得出來的重點答案，附延伸章節", "file": "content/review/faq.md" },
+    { "id": "quiz",       "cat": "review", "title": "總測驗 40 題", "summary": "由初階到進階，點開即可看解答與解題說明", "file": "content/review/quiz.md" },
+    { "id": "cheatsheet", "cat": "review", "title": "指令與協定速查表", "summary": "Port、curl、ipmitool、i2c-tools、PMBus 命令碼、Status Code", "file": "content/review/cheatsheet.md" },
+    { "id": "glossary",   "cat": "review", "title": "名詞與縮寫對照", "summary": "中英文全名、常見唸法、所屬層級、使用情境", "file": "content/review/glossary.md" },
+    { "id": "references", "cat": "review", "title": "參考資料與查證狀態", "summary": "官方規範連結、對應章節、哪些內容需依實機驗證", "file": "content/review/references.md" }
+  ]
+}

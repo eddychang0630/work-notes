@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>工作專業知識庫</title>
+<meta name="description" content="Server BMC、IPMI、Redfish、網路協定、PMBus 等工作專業知識的複習筆記">
+<meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101319" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="知識庫">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<header class="topbar">
+  <button id="back" class="iconbtn" aria-label="返回" hidden>‹</button>
+  <h1 id="title">工作專業知識庫</h1>
+  <button id="font" class="iconbtn small" aria-label="調整字級">Aa</button>
+</header>
+
+<main id="app"><p class="loading">載入中…</p></main>
+
+<nav class="tabbar" aria-label="主選單">
+  <a href="#/" data-tab="home"><span>🏠</span>首頁</a>
+  <a href="#/path" data-tab="path"><span>🧭</span>學習路徑</a>
+  <a href="#/search" data-tab="search"><span>🔍</span>搜尋</a>
+  <a href="#/cat/review" data-tab="review"><span>📚</span>複習</a>
+</nav>
+
+<button id="top" class="fab" aria-label="回到頂端" hidden>↑</button>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" defer></script>
+<script src="assets/app.js" defer></script>
+</body>
+</html>
